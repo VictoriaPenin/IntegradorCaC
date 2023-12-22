@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head-section(titulo='Agregar')}"></head>
+
+<body>
+    <!--Navbar-->
+    <div th:replace="~{fragments/navbar::navbar-section}"></div>
+
+    <div class="container">
+        <div class="container text-center text-white" style="margin: 20px">
+            <h3>Agregar Contacto</h3>
+        </div>
+    </div>
+
+    <!--Formulario-->
+    <div class="container">
+        <form action="/agregar" modelAttibute="contactoForm" method="post">
+            <div class="mb-3">
+                <label for="nombre" class="form-label text-white">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required="true" placeholder="Ingrese aquí su NOMBRE">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label text-white">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required="true" placeholder="Ingrese aquí su APELLIDO">
+            </div>
+            <div class="mb-3">
+                <label for="celular" class="form-label text-white">Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular" required="true" placeholder="Ingrese aquí su CELULAR">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label text-white">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required="true" placeholder="Ingrese aquí su EMAIL">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-sm me-3">Agregar</button>
+                <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+            </div>
+        </form>
+    </div>
+
+
+    <!--Footer-->
+    <footer th:replace="~{fragments/footer::footer-section}"></footer>
+
+</body>
+
+</html>

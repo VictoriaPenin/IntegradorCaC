@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head::head-section(titulo='Agregar')}"></head>
+
+<body>
+    <!--Navbar-->
+    <div th:replace="~{fragments/navbar::navbar-section}"></div>
+
+    <div class="container">
+        <div class="container text-center text-white" style="margin: 20px">
+            <h3>Editar Contacto</h3>
+        </div>
+    </div>
+
+    <!--Formulario-->
+    <div class="container">
+        <form action="/editar" th:object="${contacto}" method="post">
+            <input type="hidden" th:field="*{idContacto}" />
+            <div class="mb-3">
+                <label for="nombre" class="form-label text-white">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required="true" th:field="*{nombre}">
+            </div>
+            <div class="mb-3">
+                <label for="apellido" class="form-label text-white">Apellido</label>
+                <input type="text" class="form-control" id="apellido" name="apellido" required="true"
+                    th:field="*{apellido}">
+            </div>
+            <div class="mb-3">
+                <label for="celular" class="form-label text-white">Celular</label>
+                <input type="text" class="form-control" id="celular" name="celular" required="true"
+                    th:field="*{celular}">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label text-white">Email</label>
+                <input type="email" class="form-control" id="email" name="email" required="true" th:field="*{email}">
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-warning btn-sm me-3">Editar</button>
+                <a href="/" class="btn btn-danger btn-sm">Regresar</a>
+            </div>
+        </form>
+    </div>
+
+
+    <!--Footer-->
+    <div th:replace="~{fragments/footer::footer-section}"></div>
+
+</body>
+
+</html>
